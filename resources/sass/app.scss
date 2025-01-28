@@ -1,0 +1,64 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: rgb(47, 30, 63);
+}
+
+header {
+
+    height: 20vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.342);
+    box-shadow: inset 0 0 5px black;
+
+    h1 {
+        font-family: "Pixelify Sans", serif;
+        color: gold;
+        text-shadow:
+        1px 0 1px black,
+        0 1px 1px black,
+        -1px 0 1px black,
+        0 -1px 1px black,
+        ;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    h1:hover {
+        transform: rotate(-5deg);
+        scale: 110%;
+    }
+}
+
+nav {
+    height: 10vh;
+    border: solid 3px whitesmoke;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 0 5px black;
+
+    a {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: whitesmoke;
+        font-weight: bolder;
+        font-family: "Pixelify Sans", serif;
+        transition: all 0.4s;
+    }
+
+    a:hover {
+        color: goldenrod;
+        background-color: rgb(14, 14, 14);
+    }
+}
