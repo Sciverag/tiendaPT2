@@ -9,6 +9,9 @@
 
 body {
     background-color: rgb(47, 30, 63);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -59,6 +62,11 @@ nav {
 
     a:hover {
         color: goldenrod;
-        background-color: rgb(14, 14, 14);
+        backdrop-filter: brightness(50%);
     }
+}
+
+footer {
+    margin-top: auto;
+    border-top: solid 3px whitesmoke;
 }

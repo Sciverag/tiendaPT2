@@ -4,6 +4,8 @@
     @extends('partials.header')
 @endsection
 
+@section('contenido','hola')
+
 @section('footer')
     @extends('partials.footer')
 @endsection
