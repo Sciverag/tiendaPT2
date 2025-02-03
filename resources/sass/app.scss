@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 header {
@@ -73,5 +74,26 @@ footer {
 
     h1 {
         font-size: medium;
+    }
+}
+
+#detailsMain {
+
+    > * {
+        border: solid 3px whitesmoke;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+    }
+
+    img {
+        background-color: black;
+        margin-right: 1%;
+    }
+
+    > div {
+        height: fit-content !important;
+
+        h1 {
+            font-family: "Pixelify Sans", serif;
+        }
     }
 }

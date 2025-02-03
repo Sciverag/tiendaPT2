@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('inicio');
-});
+})->name('inicio');
+
+Route::get('juegos',[GameController::class, 'index'])->name('listado_juegos');
+
+Route::get('juegos/{id}', [GameController::class, 'show'])->name('detalles_juego');

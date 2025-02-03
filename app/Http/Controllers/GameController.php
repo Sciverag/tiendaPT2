@@ -14,7 +14,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $juegos = Game::get();
+        return view('juegos.index', compact('juegos'));
     }
 
     /**
@@ -44,9 +45,10 @@ class GameController extends Controller
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show($id)
     {
-        //
+        $juego = Game::find($id);
+        return view('juegos.details', compact('juego'));
     }
 
     /**
