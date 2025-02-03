@@ -12019,5 +12019,9 @@ nav a:hover {
 
 footer {
   margin-top: auto;
+  padding: 1%;
   border-top: solid 3px whitesmoke;
+}
+footer h1, footer .h1 {
+  font-size: medium;
 }
