@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User as ModelsUser;
 use Illuminate\Http\Request;
 
 class User extends Controller
@@ -13,7 +14,8 @@ class User extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = ModelsUser::get();
+        return view('usuarios.index',compact('usuarios'));
     }
 
     /**
@@ -79,6 +81,8 @@ class User extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = ModelsUser::findOrFail($id);
+        $usuario->delete();
+        return redirect()->route('listado_usuarios');
     }
 }

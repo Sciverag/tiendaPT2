@@ -36,7 +36,10 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = $request->get('id');
+        $cantidad = $request->get('cantidad');
+
+        return redirect()->route('listado_carro');
     }
 
     /**

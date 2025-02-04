@@ -74,6 +74,7 @@ footer {
 
     h1 {
         font-size: medium;
+        margin-left: auto;
     }
 }
 
@@ -81,6 +82,7 @@ footer {
 
     > * {
         border: solid 3px whitesmoke;
+        border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
     }
 
@@ -94,6 +96,29 @@ footer {
 
         h1 {
             font-family: "Pixelify Sans", serif;
+        }
+    }
+}
+
+#loginMain {
+    border: solid 3px whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+
+    h1 {
+        font-family: "Pixelify Sans", serif;
+    }
+}
+
+#userlistContainer {
+    > div {
+        border: solid 3px whitesmoke;
+        border-radius: 10px;
+
+        div {
+            h1 {
+                font-family: "Pixelify Sans", serif;
+            }
         }
     }
 }

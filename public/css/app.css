@@ -12025,10 +12025,12 @@ footer {
 }
 footer h1, footer .h1 {
   font-size: medium;
+  margin-left: auto;
 }
 
 #detailsMain > * {
   border: solid 3px whitesmoke;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
 }
 #detailsMain img {
@@ -12040,5 +12042,22 @@ footer h1, footer .h1 {
   height: fit-content !important;
 }
 #detailsMain > div h1, #detailsMain > div .h1 {
+  font-family: "Pixelify Sans", serif;
+}
+
+#loginMain {
+  border: solid 3px whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+}
+#loginMain h1, #loginMain .h1 {
+  font-family: "Pixelify Sans", serif;
+}
+
+#userlistContainer > div {
+  border: solid 3px whitesmoke;
+  border-radius: 10px;
+}
+#userlistContainer > div div h1, #userlistContainer > div div .h1 {
   font-family: "Pixelify Sans", serif;
 }
