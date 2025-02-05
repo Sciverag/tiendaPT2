@@ -16,11 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('inicio');
-})->name('inicio')->middleware('auth');
-
-Route::get('juegos',[GameController::class, 'index'])->name('listado_juegos')->middleware('auth');
+Route::get('/',[GameController::class, 'index'])->name('listado_juegos')->middleware('auth');
 
 Route::get('juegos/{id}', [GameController::class, 'show'])->name('detalles_juego')->middleware('auth');
 

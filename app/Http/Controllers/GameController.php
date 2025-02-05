@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
+const token = "aUOTgwvthEt6qSWGkDMZrSvMEaSfc6C37w1MfIbOlePq2L9RSP7jrAWgAAXl";
+
 class GameController extends Controller
 {
     /**

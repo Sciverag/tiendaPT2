@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenido')
-    <main class="container-flow justify-content-center row p-5 g-2">
+    <main id="productos" class="container-flow justify-content-center row p-5 g-2">
         @foreach ($juegos as $juego)
         <div class="card bg-dark text-white mx-1 col-3 shadow" style="width: 18rem;">
             <img src="{{$juego->foto}}" class="card-img-top h-75" alt="{{$juego->name}}">
