@@ -33,4 +33,12 @@ Route::get('login', [LoginController::class, 'loginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('usuarios/eliminar/{id}', [User::class, 'destroy'])->name('eliminar_usuario')->middleware('auth','roles');
+Route::delete('usuarios/eliminar/{id}', [User::class, 'destroy'])->name('eliminar_usuario')->middleware('auth','roles');
+
+Route::get('usuarios/crear', [User::class, 'create'])->name('cear_usuario')->middleware('auth','roles');
+
+Route::post('usuarios/crear', [User::class, 'store'])->name('guardar_usuario')->middleware('auth','roles');
+
+Route::get('usuarios/{id}', [User::class, 'show'])->name('ver_usuario')->middleware('auth','roles');
+
+Route::put('usuarios/{id}', [User::class, 'update'])->name('actualizar_usuario')->middleware('auth','roles');

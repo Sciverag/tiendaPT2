@@ -122,3 +122,14 @@ footer {
         }
     }
 }
+
+main:has(#createForm){
+    h1 {
+        font-family: "Pixelify Sans", serif;
+    }
+}
+
+#createForm {
+    border: solid 3px whitesmoke;
+    border-radius: 10px;
+}

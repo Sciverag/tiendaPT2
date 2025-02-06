@@ -25,7 +25,7 @@ class User extends Controller
      */
     public function create()
     {
-        //
+        return view('usuarios.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class User extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'unique:users',
+        ]);
+
+        $usuario = new ModelsUser();
+        $usuario->nombre = $request->get('nombre');
+        $usuario->apellidos = $request->get('apellidos');
+        $usuario->email = $request->get('email');
+        $usuario->password = bcrypt($request->get('password'));
+        if($request->get('admin') == null){
+            $usuario->admin = false;
+        }else{
+            $usuario->admin = true;
+        }
+        $usuario->save();
+        return redirect()->route('listado_usuarios');
     }
 
     /**
@@ -47,7 +62,8 @@ class User extends Controller
      */
     public function show($id)
     {
-        //
+        $usuario = ModelsUser::findOrFail($id);
+        return view('usuarios.update', compact('usuario'));
     }
 
     /**
@@ -70,7 +86,23 @@ class User extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'email' => 'unique:users,email,' . $id,
+            'password' => 'nullable'
+        ]);
+
+        $usuario = ModelsUser::findOrFail($id);
+        $usuario->nombre = $request->get('nombre');
+        $usuario->apellidos = $request->get('apellidos');
+        $usuario->email = $request->get('email');
+        $usuario->password = $request->password ? bcrypt($request->get('password')) : $usuario->password;
+        if($request->get('admin') == null){
+            $usuario->admin = false;
+        }else{
+            $usuario->admin = true;
+        }
+        $usuario->save();
+        return redirect()->route('listado_usuarios');
     }
 
     /**

@@ -1,5 +1,5 @@
 @extends('plantilla')
-@section('titulo','GameShop - Inicio')
+@section('titulo','GameShop - Carro')
 @section('header')
     @extends('partials.header')
 @endsection

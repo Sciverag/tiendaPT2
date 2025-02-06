@@ -21,7 +21,7 @@ class LoginController extends Controller
         ]);
         if (Auth::attempt($credenciales)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('inicio'));
+            return redirect()->intended(route('listado_juegos'));
         } else {
             $error = 'Usuario incorrecto';
             return view('auth.login', compact('error'));
