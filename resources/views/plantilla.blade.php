@@ -1,3 +1,13 @@
+@php
+    if(Auth::check()){
+            $id = auth()->user()->id;
+            $response = Http::withToken("gYaXBDvQAqkVQDOya9TqNP0ifqLvSNH6stgdMZeak2wVPrOdSWBfzBNHUuHw")->get("http://carrito/api/carros/$id");
+            $cantidadLineas = json_decode($response);
+        }else{
+            $cantidadLineas = 0;
+        }
+@endphp
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,7 +27,7 @@
 
 <body>
     @yield('header')
-    @include('partials.nav')
+    @include('partials.nav',compact('cantidadLineas'))
 
     @yield('contenido')
 

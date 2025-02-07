@@ -5,6 +5,10 @@
         @if (auth()->user()->admin)
             <a href="{{route('listado_usuarios')}}">Usuarios</a>
         @endif
-        <a href="{{ route('listado_carro') }}">Carro</a>
+        <a id="carroButton" href="{{ route('listado_carro') }}">Carro
+            @if ($cantidadLineas != 0)
+            <p>{{$cantidadLineas}}</p>
+            @endif
+        </a>
     @endif
 </nav>

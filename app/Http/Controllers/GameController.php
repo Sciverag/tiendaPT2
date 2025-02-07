@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
-
-const token = "aUOTgwvthEt6qSWGkDMZrSvMEaSfc6C37w1MfIbOlePq2L9RSP7jrAWgAAXl";
+use Illuminate\Support\Facades\Http;
 
 class GameController extends Controller
 {
@@ -38,10 +37,7 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $request->get('id');
-        $cantidad = $request->get('cantidad');
-
-        return redirect()->route('listado_carro');
+        //
     }
 
     /**

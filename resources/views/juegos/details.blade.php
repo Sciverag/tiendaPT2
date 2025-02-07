@@ -6,6 +6,7 @@
 
 @section('contenido')
     <main id="detailsMain" class="row p-5 justify-content-center">
+
         <img src="{{$juego->foto}}" alt="{{$juego->name}}" class="col-3 h-100 object-fit-cover">
         <div class="col-8 d-flex flex-column bg-dark p-3">
             <h1 class=" border-bottom text-warning p-3">{{$juego->name}}</h1>
@@ -14,7 +15,7 @@
 
             <form action="{{route('comprar_juego')}}" method="POST" class=" input-group m-auto">
                 @csrf
-                <input type="hidden" name="id" id="id" value="{{$juego->id}}">
+                <input type="hidden" name="idProducto" id="idProducto" value="{{$juego->id}}">
                 <input class=" input-group-text"  type="number" name="cantidad" id="cantidad" value="1" min="1">
                 <input class="btn btn-success" type="submit" value="Comprar">
             </form>
