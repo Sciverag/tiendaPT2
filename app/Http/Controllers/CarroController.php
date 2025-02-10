@@ -16,7 +16,11 @@ class CarroController extends Controller
             "idUsuario" => auth()->user()->id
         ]);
         $lineas = json_decode($response);
-        return view('carro.index',compact('lineas'));
+        $total = 0;
+        foreach($lineas as $linea){
+            $total += ($linea->precio * $linea->cantidad);
+        }
+        return view('carro.index',compact('lineas', 'total'));
     }
 
     public function store(Request $request){
@@ -35,6 +39,32 @@ class CarroController extends Controller
         if($response->failed()) {
             return back()->with('error', 'Error al añadir al carrito');
         }
+        return redirect()->route('listado_carro');
+    }
+
+    public function update(Request $request){
+        $response = Http::withToken(self::TOKEN)->put('http://carrito/api/carros', [
+            "id" => $request->idCarro,
+            "cantidad" => $request->cantidad
+        ]);
+
+        if($response->failed()) {
+            return back()->with('error', 'No se a podido actualizar el carrito');
+        }
+
+        return redirect()->route('listado_carro');
+    }
+
+    public function destroy($idProducto){
+        $response = Http::withToken(self::TOKEN)->delete('http://carrito/api/carros', [
+            'idUsuario' => auth()->user()->id,
+            'idProducto' => $idProducto
+        ]);
+
+        if($response->failed()) {
+            return back()->with('error', 'No se a podido eliminar la linea del carrito');
+        }
+
         return redirect()->route('listado_carro');
     }
 }

@@ -1,4 +1,4 @@
-<nav class="nav d-flex justify-content-around align-items-center bg-dark fs-4 position-sticky top-0 z-1">
+<nav id="navMenu" class="nav d-flex justify-content-around align-items-center bg-dark fs-4 position-sticky top-0 z-1">
     @if (auth()->check())
         <a href="{{ route('listado_juegos') }}#">Inicio</a>
         <a href="{{ route('listado_juegos') }}#productos">Productos</a>

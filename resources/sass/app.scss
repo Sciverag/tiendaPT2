@@ -41,7 +41,7 @@ header {
     }
 }
 
-nav {
+#navMenu {
     height: 10vh;
     border: solid 3px whitesmoke;
     border-left: none;
@@ -171,4 +171,48 @@ main:has(#createForm){
     h1 {
         font-family: "Pixelify Sans", serif;
     }
+}
+
+#cartSection {
+    border: solid 3px whitesmoke;
+    border-radius: 10px;
+    height: fit-content;
+
+    h1 {
+        font-family: "Pixelify Sans", serif;
+    }
+}
+
+#mainPedido {
+    border: solid 3px whitesmoke;
+    border-radius: 10px;
+
+    h1 {
+        font-family: "Pixelify Sans", serif;
+    }
+}
+
+nav:has(.pagination) {
+    margin: auto;
+
+    .pagination {
+        box-shadow: 0 0 5px black;
+        border: solid 3px whitesmoke;
+        overflow: hidden;
+        border-radius: 10px;
+        * {
+            background-color: var(--bs-dark);
+            * {
+                border: solid 2px rgb(48, 48, 48);
+            }
+
+        }
+
+        .page-item:not(.active, .disabled) {
+            * {
+                color: gold;
+            }
+        }
+    }
+
 }

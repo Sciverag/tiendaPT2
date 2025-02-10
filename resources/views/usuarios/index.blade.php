@@ -10,8 +10,12 @@
         @foreach ($usuarios as $usuario)
             <div class=" bg-dark row m-2 mb-4 p-3 column-gap-4 shadow">
                 <div class="col-7">
-                    <h1 class=" fs-3 text-warning">{{$usuario->nombre}}</h1>
-                    <h2 class=" fs-5 text-white-50">{{$usuario->email}}</h2>
+                    <h1 class=" fs-3 text-warning d-flex">{{$usuario->nombre}} @if ($usuario->admin)
+                        <p class="text-warning-emphasis mx-2 my-auto">[Admin]</p>
+                    @endif</h1>
+                    <h2 class=" fs-5 text-white-50">{{$usuario->email}}
+                        <p class=" fs-6 my-auto text-dark-emphasis">{{$usuario->password}}</p>
+                    </h2>
                 </div>
 
                 <a class="btn btn-success col align-self-center" href="{{route('ver_usuario',$usuario->id)}}">Modificar</a>
